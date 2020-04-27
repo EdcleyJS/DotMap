@@ -177,8 +177,7 @@ $(document).ready(function () {
 			$('.alert').removeClass("show");
 	    	$('#header').css('display','none');
 	    	$('#tutorial').css('display','');
-	    	InicioDot();
-			inicioDotTaxi();		
+	    	InicioDot();		
 		}
     });
 	// CONTA OS CLICKS PARA DEPOIS ENVIAR COM OS FORMULÁRIOS.
@@ -277,7 +276,7 @@ $(document).ready(function () {
 		p=p.highlights;
 		opcoes=[];
 		p.forEach(function(d,i){
-			opcoes.push(d);
+			
 		});
 		if(base=='C'){
 			$('#chuvaview').show();
@@ -312,7 +311,7 @@ $(document).ready(function () {
 			   	var p=findP(novodataset,id);
 			    p=p.highlights;
 			    p.forEach(function(d,i){
-			    	opcoes.push(d);
+			    	
 			    });
 				if(base=='C'){
 					$('#chuvaview').show();
@@ -365,7 +364,7 @@ $(document).ready(function () {
 			   	p=p.highlights;
 				opcoes=[];
 				p.forEach(function(d,i){
-					opcoes.push(d);
+					
 				});
 				if(base=='C'){
 					$('#chuvaview').show();

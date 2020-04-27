@@ -203,6 +203,7 @@ function InicioDot(){
   L.geoJson(dataset,{
     onEachFeature: async function (feature, layer) {
         await sleep(3000);
+
         novaDist= dotMapPrep(getDis(feature.properties.name));
         
         //console.log(Math.max.apply(Math, getDis(feature.properties.name)));
@@ -270,6 +271,7 @@ function InicioDot(){
           indice+=limite;
         });
         if(feature.properties.name=="Xexéu"){
+          //console.log(dataset);
           Vis03TutorialFunction(dataset);
         }
     }
@@ -289,7 +291,24 @@ function inicioDotTaxi(){
         bounds = layer.getBounds();
         width = Math.abs(bounds._northEast.lng - bounds._southWest.lng);
         height = Math.abs(bounds._northEast.lat - bounds._southWest.lat);
-        area= (turf.area(feature.geometry)/10000000);     
+        area= (turf.area(feature.geometry)/10000000);
+        //console.log(feature);
+        if (feature.properties.zone=="Lenox Hill West") {
+          console.log("Lenox Hill West ");
+          console.log(distribuicaoNYC(feature.properties.OBJECTID));
+        }
+        if (feature.properties.zone=="Gramercy") {
+          console.log("Gramercy");
+          console.log(distribuicaoNYC(feature.properties.OBJECTID));
+        }
+        if (feature.properties.zone=="West Village") {
+          console.log("West Village");
+          console.log(distribuicaoNYC(feature.properties.OBJECTID));
+        }
+        if (feature.properties.zone=="Murray Hill") {
+          console.log("Murray Hill");
+          console.log(distribuicaoNYC(feature.properties.OBJECTID));
+        }   
         //area= area/3;
           xMin = Infinity;
           yMin = Infinity;
